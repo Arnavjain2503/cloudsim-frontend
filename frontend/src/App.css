@@ -1,0 +1,93 @@
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Main container styling */
+.App {
+  text-align: center;
+}
+
+/* Glassmorphic card look */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Simulation button */
+.btn-outline-primary,
+.btn-primary {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-outline-primary:hover,
+.btn-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* Table */
+.table {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Badge look */
+.badge-success {
+  background-color: #28a745 !important;
+  color: white;
+}
+
+.badge-danger {
+  background-color: #dc3545 !important;
+  color: white;
+}
+
+/* Headings */
+h1, h3, h5 {
+  font-weight: 600;
+}
+
+/* Landing page hero */
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Scroll animation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional loading */
+.loading-spinner {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Error boundary */
+.error-boundary {
+  background-color: #fff3f3;
+  border: 1px solid #ffc2c2;
+  color: #dc3545;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
