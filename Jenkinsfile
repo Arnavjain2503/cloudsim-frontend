@@ -2,10 +2,10 @@ pipeline {
     agent { label 'Slave-frontend' }
 
     environment {
-        DOCKER_IMAGE = 'React-cloudsim-app'
+        DOCKER_IMAGE = 'react-cloudsim-app'  // Use lowercase for the image name
         DOCKER_TAG = 'latest'
-        CONTAINER_NAME = 'React-cloudsim-container'
-        FRONTEND_PATH = 'frontend' // Specify the path to the frontend folder containing Dockerfile
+        CONTAINER_NAME = 'react-cloudsim-container'  // Use lowercase for the container name
+        FRONTEND_PATH = 'frontend' // Path to the frontend folder containing Dockerfile
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh "docker run -d -p 5000:5000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                sh "docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:${DOCKER_TAG}"
             }
         }
     }
