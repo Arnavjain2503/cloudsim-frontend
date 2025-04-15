@@ -24,7 +24,7 @@ const SimulationForm = ({ onSimulationComplete }) => {
     // Fetch available algorithms from the backend
     const fetchAlgorithms = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/simulation/algorithms');
+        const response = await axios.get('http://15.206.209.5:8080/api/simulation/algorithms');
         setAlgorithms(response.data);
         if (response.data.length > 0) {
           setFormData(prev => ({ ...prev, schedulingAlgorithm: response.data[0] }));
@@ -52,7 +52,7 @@ const SimulationForm = ({ onSimulationComplete }) => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:8080/api/simulation/run', formData);
+      const response = await axios.post('http://15.206.209.5:8080/api/simulation/run', formData);
       onSimulationComplete(response.data);
     } catch (err) {
       setError('Failed to run simulation. Please check your inputs and try again.');
