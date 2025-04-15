@@ -5,6 +5,7 @@ pipeline {
         DOCKER_IMAGE = 'React-cloudsim-app'
         DOCKER_TAG = 'latest'
         CONTAINER_NAME = 'React-cloudsim-container'
+        FRONTEND_PATH = 'frontend' // Specify the path to the frontend folder containing Dockerfile
     }
 
     stages {
@@ -19,7 +20,8 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                // Specify the context (frontend folder) and the path to Dockerfile
+                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} -f ${FRONTEND_PATH}/Dockerfile ${FRONTEND_PATH}"
             }
         }
 
@@ -45,6 +47,6 @@ pipeline {
         }
         failure {
             echo 'Deployment failed. Please check the logs.'
- }
-}
+        }
+    }
 }
